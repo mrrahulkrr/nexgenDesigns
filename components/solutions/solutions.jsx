@@ -18,7 +18,7 @@ const servicesData = [
       'Bill of quantities',
       'Product recommendations'
     ],
-    image: '/api/placeholder/600/400'
+    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1729875270/NPU_hvn9kr.jpg'
   },
   {
     id: 'fire-fighting',
@@ -31,7 +31,7 @@ const servicesData = [
       'Bill of quantities',
       'Product recommendations'
     ],
-    image: '/api/placeholder/600/400'
+    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1729875248/welkin_park_wfwdvg.jpg'
   },
   {
     id: 'hvac',
@@ -48,28 +48,28 @@ const servicesData = [
       'Bill of quantities',
       'Product recommendations'
     ],
-    image: '/api/placeholder/600/400'
+    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1729875246/TROPICA_vfn8e9.jpg'
   },
   {
     id: 'electrical',
     title: 'Electrical',
     icon: <ZapIcon className="w-5 h-5" />,
     features: ['Power layouts', 'Lighting layouts', 'Emergency systems', 'Bill of quantities'],
-    image: '/api/placeholder/600/400'
+    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1729875179/MOR_wume78.jpg'
   },
   {
     id: 'safety',
     title: 'Safety and Security',
     icon: <Lock className="w-5 h-5" />,
     features: ['Access control', 'CCTV systems', 'Security protocols', 'Emergency response plans'],
-    image: '/api/placeholder/600/400'
+    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1729875246/TROPICA_vfn8e9.jpg'
   },
   {
     id: 'noc',
     title: "NOC's/Site Supervision",
     icon: <FolderCheck className="w-5 h-5" />,
     features: ['Site inspections', 'Quality control', 'Documentation', 'Compliance checks'],
-    image: '/api/placeholder/600/400'
+    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1729875179/MOR_wume78.jpg'
   }
 ];
 
@@ -78,7 +78,7 @@ export default function Solutions() {
   const activeService = servicesData.find(service => service.id === activeTab);
 
   return (
-    <section className="py-16 lg:py-24 relative overflow-hidden">
+    <section className="py-16 lg:py-24 relative overflow-hidden bg-gray-50">
       <div className="container-custom">
         <div className="grid lg:grid-cols-12 gap-8">
           {/* Left sidebar with tabs */}

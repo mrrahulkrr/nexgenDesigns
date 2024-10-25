@@ -5,6 +5,7 @@ import CTA from '@/components/CTA/CTA'
 import Header from '@/components/Header/Header'
 import About from '@/components/About/About'
 import ServicesList from '@/components/Services/ServicesList'
+import Projects from '@/components/Projects/Projects'
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Solutions />
+      <Projects />
       <Features />
       <About />
       <ServicesList />
