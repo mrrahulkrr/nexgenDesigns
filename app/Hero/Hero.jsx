@@ -98,7 +98,7 @@ export default function Hero() {
                 <ServiceCard 
                 title="BIM" 
                 icon={<Building2 className="w-5 h-5" />}
-                description="3D MEP Modeling"
+                description="3D MEPF Modeling"
                 color="indigo"
               />
               </div>
@@ -160,7 +160,7 @@ export default function Hero() {
             <ServiceCard 
               title="BIM" 
               icon={<Building2 className="w-5 h-5" />}
-              description="3D MEP Modeling"
+              description="3D MEPF Modeling"
               color="purple"
             />
             <ServiceCard 

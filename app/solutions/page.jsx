@@ -7,6 +7,7 @@ export default function Solutions() {
     {
       id: 1,
       title: "Fire Sprinkler & Hydrant Systems",
+      image: "https://res.cloudinary.com/dic3orh1e/image/upload/v1730061679/FIRE_SPRNKLER_1_gobu7u.jpg",
       description: "We excel in designing fire sprinkler and hydrant systems,leveraging advanced software and industry standards. Our solutions guarantee comprehensive coverage and compliance with safety regulations, integrating Indian codes like the NBC and NFPA for optimal safety and performance",
       icon: Flame,
       features: [
@@ -20,6 +21,7 @@ export default function Solutions() {
     {
       id: 2,
       title: "Fire Alarm Systems",
+      image: "https://res.cloudinary.com/dic3orh1e/image/upload/v1730061680/fire_alarm_rwuwou.jpg",
       description: "We specialize in designing fire alarm systems,employing advanced technology and industry standardsOur solutions ensure reliable detection and compliance with safety regulations, incorporating relevant Indian codes, specifically IS 2189 for fire alarm systems and IS13800 for alarm systems for buildings, to ensure optimal safety and performance",
       icon: Shield,
       features: [
@@ -33,6 +35,7 @@ export default function Solutions() {
     {
       id: 3,
       title: "Electrical Systems",
+      image: "https://res.cloudinary.com/dic3orh1e/image/upload/v1730061680/electrical_rbhff0.jpg",
       description: "We specialize in designing electrical systems, utilizing advanced technology and industry standards. Our solutions ensure reliable power distribution and compliance with safety regulations, incorporating relevant Indian codes, specifically IS 732 for wiring and IS 3043 for earthing, to ensure optimal safety and performance.",
       icon: Wind,
       features: [
@@ -47,6 +50,7 @@ export default function Solutions() {
     {
       id: 4,
       title: "Plumbing Systems",
+      image: "https://res.cloudinary.com/dic3orh1e/image/upload/v1730061812/plumbing_ovsx4f.jpg",
       description: "We provide expert design of plumbing systems, ensuring efficient water supply and drainage while adhering to Indian codes like IS 4985 and IS 5329 for optimal safety and performance.",
       icon: Zap,
       features: [
@@ -61,6 +65,7 @@ export default function Solutions() {
     {
       id: 5,
       title: "CAD to BIM Engineering",
+      image: "https://res.cloudinary.com/dic3orh1e/image/upload/v1730062134/scan_to_bim_ubgrbz.jpg",
       description: "We specialize in converting CAD drawings to Building Information Modeling (BIM), enhancing project visualization and collaboration while improving accuracy and efficiency.",
       icon: Droplets,
       features: [
@@ -76,6 +81,7 @@ export default function Solutions() {
     {
       id: 6,
       title: "MEPF BOQ and Estimation",
+      image: "https://res.cloudinary.com/dic3orh1e/image/upload/v1730061689/boq_cbqcdc.jpg",
       description: "We offer comprehensive MEPF Bill of Quantities (BOQ) and estimation services to ensure accurate project budgeting and resource allocation, enhancing project efficiency and cost management.",
       icon: Droplets,
       features: [
@@ -113,7 +119,7 @@ export default function Solutions() {
               <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                 <div className="relative group overflow-hidden rounded-2xl shadow-lg">
                   <img
-                    src={`/api/placeholder/600/400`}
+                    src={service.image}
                     alt={service.title}
                     className="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-500"
                   />

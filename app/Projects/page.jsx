@@ -14,7 +14,7 @@ const projects = [
   },
   {
     id: 2,
-    name: 'Welkin Park Tropica',
+    name: 'Adarsh Welkin Park',
     location: 'Bangalore',
     image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1729875248/welkin_park_wfwdvg.jpg',
     year: '2023',
