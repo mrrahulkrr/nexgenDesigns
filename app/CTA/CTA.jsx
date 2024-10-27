@@ -32,7 +32,7 @@ export default function CTA() {
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-yellow-400" />
                 <a 
-                  href="tel:+919799858301" 
+                  href="tel:+919341075741" 
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   +91-9341075741
@@ -42,7 +42,7 @@ export default function CTA() {
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-yellow-400" />
                 <a 
-                  href="mailto:contact@pillarplus.com"
+                  href="mailto:Contact@nexgendesign.in"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Contact@nexgendesign.in
