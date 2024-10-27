@@ -95,7 +95,7 @@ export default function Solutions() {
             <span className="text-primary font-semibold">Our Services</span>
           </div>
           <h2 className="text-4xl font-bold text-gray-900">
-            Comprehensive <span className="text-primary">MEP Solutions & Services</span>
+            Comprehensive <span className="text-primary">MEPF Solutions</span>
           </h2>
           <p className="text-gray-700 mt-4 max-w-2xl mx-auto">
             Cutting-edge technology combined with engineering expertise

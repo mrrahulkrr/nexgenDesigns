@@ -37,7 +37,7 @@ export default function Header() {
     { label: 'HOME', id: 'hero', href: '/' },
     { label: 'SERVICES', id: 'services', href: '/#services' },
     { label: 'PROJECTS', id: 'projects', href: '/#projects' },
-    { label: 'MEP SOLUTIONS', id: 'solutions', href: '/#solutions' },
+    { label: 'MEPF SOLUTIONS', id: 'solutions', href: '/#solutions' },
     { label: 'ABOUT', id: 'about', href: '/#about' },
   ]
 

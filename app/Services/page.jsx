@@ -6,21 +6,6 @@ import { ShieldCheck, Droplets, Wind, ZapIcon, Lock, FolderCheck } from 'lucide-
 
 const servicesData = [
   {
-    id: 'plumbing',
-    title: 'Plumbing',
-    icon: <Droplets className="w-5 h-5" />,
-    features: [
-      'Drainage piping (internal and external)',
-      'Water supply (internal and external)',
-      'Vertical stake piping',
-      'Plumbing wall elevations',
-      'Schematics',
-      'Bill of quantities',
-      'Product Data Sheet'
-    ],
-    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1730005739/PLUMBING_yiwpm5.jpg'
-  },
-  {
     id: 'fire-fighting',
     title: 'Fire-Services',
     icon: <ShieldCheck className="w-5 h-5" />,
@@ -35,6 +20,29 @@ const servicesData = [
     image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1730005836/FIRE_SERVICES_vjch3k.jpg'
   },
   {
+    id: 'electrical',
+    title: 'Electrical',
+    icon: <ZapIcon className="w-5 h-5" />,
+    features: ['Power layouts', 'Lighting layouts', 'Emergency systems', 'Bill of quantities'],
+    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1730005722/electrical_ee1rut.jpg'
+  },
+  {
+    id: 'plumbing',
+    title: 'Plumbing',
+    icon: <Droplets className="w-5 h-5" />,
+    features: [
+      'Drainage piping (internal and external)',
+      'Water supply (internal and external)',
+      'Vertical stake piping',
+      'Plumbing wall elevations',
+      'Schematics',
+      'Bill of quantities',
+      'Product Data Sheet'
+    ],
+    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1730005739/PLUMBING_yiwpm5.jpg'
+  },
+  
+  {
     id: 'roadDesign',
     title: 'Road Design',
     icon: <Wind className="w-5 h-5" />,
@@ -46,21 +54,15 @@ const servicesData = [
       'Pavement Design',
       'Bill of quantities',
     ],
-    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1730005651/hvac_drwyua.jpg'
+    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1730059645/roadServices_Nexgen_l77tut.jpg'
   },
-  {
-    id: 'electrical',
-    title: 'Electrical',
-    icon: <ZapIcon className="w-5 h-5" />,
-    features: ['Power layouts', 'Lighting layouts', 'Emergency systems', 'Bill of quantities'],
-    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1730005722/electrical_ee1rut.jpg'
-  },
+  
   {
     id: 'cadToBim',
     title: 'CAD To BIM',
     icon: <Lock className="w-5 h-5" />,
     features: ['Model Conversion', 'Data Integration', 'Clash Detection', '3D Visualization'],
-    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1729875246/TROPICA_vfn8e9.jpg'
+    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1730059647/bim_dpcmbh.jpg'
   },
   // {
   //   id: 'noc',
