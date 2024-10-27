@@ -1,13 +1,33 @@
+"use client"
 import React from 'react';
 import { Button } from '../../components/ui/Button';
 import { Play, Zap, Droplets, Wind, Building2, Ruler, Cpu } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function Hero() {
+  const router = useRouter();
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const headerOffset = 80
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.scrollY - headerOffset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+      // setIsMenuOpen(false)
+    }
+  }
+
+
   return (
     <section className="pt-24 pb-16 lg:pt-32 lg:pb-24 relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-transparent to-emerald-50/30" />
-      
+      <div className="absolute inset-0 bg-gradient-to-br via-transparent" />
+
       {/* Animated circuit lines background */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-full h-full" 
@@ -27,34 +47,39 @@ export default function Hero() {
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-              <span className="text-primary font-semibold">AI-Powered MEP Solutions</span>
+              <span className="text-primary font-semibold">Advanced MEPF Solutions</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              Fast, Coordinated and{' '}
+              Welcome to {' '}
               <span className="block">
-                Accurate{' '}
-                <span className="text-primary relative">
-                  MEP Designs
-                  <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 100 10" xmlns="http://www.w3.org/2000/svg">
+              <span className='text-primary'>NexGen</span>
+               <br />
+                Design{' '}
+                <span className="text-primary text-base relative">
+                  <br />
+                  Your Trusted Partner
+                  in MEPF Engineering Solutions
+                  {/* <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 100 10" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 5 Q 25 0, 50 5 T 100 5" fill="none" stroke="currentColor" strokeWidth="2" className="text-primary/30" />
-                  </svg>
+                  </svg> */}
                 </span>
               </span>
             </h1>
 
-            <p className="text-base md:text-lg text-gray-700 max-w-xl">
-              Our MEP consultants leverage cutting-edge AI technology to revolutionize 
-              the creation of drawings, BOQs, and comprehensive reports.
+            <p className="text-base md:text-sm text-gray-500 max-w-xl">
+                At Nexgen Design, we deliver expert MEPF (Mechanical, Electrical, Plumbing, and Fire) design solutions for modern construction. Our experienced team creates efficient, precise designs using advanced tools.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
+              <Button size="lg" className="bg-primary hover:bg-primary/90"  onClick={() => scrollToSection('cta')}>
                 Request Proposal
               </Button>
-              <Button variant="outline" size="lg" className="group">
-                <Play className="mr-2 w-4 h-4 transition-transform group-hover:scale-110" />
-                Watch Demo
+              <Button onClick={() => window.open("https://www.linkedin.com/company/nexgen-design/", "_blank")}
+                      variant="outline"
+                      size="lg" className="group">
+                <Play className="mr-2 ml-6 w-4 h-4 transition-transform group-hover:scale-110" />
+                Our Works
               </Button>
             </div>
           </div>
@@ -63,7 +88,7 @@ export default function Hero() {
           <div className="relative aspect-square hidden md:block">
             {/* Central rotating hexagon */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-48 h-48 lg:w-64 lg:h-64 border-4 border-primary/20 rotate-45 animate-[spin_20s_linear_infinite] group-hover:border-primary/40 transition-colors duration-300" />
+              <div className="w-48 h-48 lg:w-64 lg:h-64 border-4 border-primary/20 rotate-30 animate-[spin_15s_linear_infinite] group-hover:border-primary/40 transition-colors duration-300" />
             </div>
 
             {/* Floating MEP service cards in fixed positions */}
@@ -71,11 +96,11 @@ export default function Hero() {
               {/* Top */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 transform animate-float-slow">
                 <ServiceCard 
-                  title="AI" 
-                  icon={<Cpu className="w-5 h-5" />}
-                  description="Smart Automation"
-                  color="indigo"
-                />
+                title="BIM" 
+                icon={<Building2 className="w-5 h-5" />}
+                description="3D MEP Modeling"
+                color="indigo"
+              />
               </div>
 
               {/* Top Right */}
@@ -100,12 +125,12 @@ export default function Hero() {
 
               {/* Bottom */}
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 transform animate-float-slow" style={{ animationDelay: "1.5s" }}>
-                <ServiceCard 
-                  title="BIM" 
-                  icon={<Building2 className="w-5 h-5" />}
-                  description="3D MEP Modeling"
-                  color="purple"
-                />
+              <ServiceCard
+                title="BOQ & Estimation"
+                icon={<Building2 className="w-5 h-5" />}
+                description="Cost & material breakdown"
+                color="purple"
+              />
               </div>
 
               {/* Bottom Left */}
@@ -121,9 +146,9 @@ export default function Hero() {
               {/* Top Left */}
               <div className="absolute top-1/4 left-0 animate-float-slow" style={{ animationDelay: "2.5s" }}>
                 <ServiceCard 
-                  title="Design" 
+                  title="Fire Protection" 
                   icon={<Ruler className="w-5 h-5" />}
-                  description="Precision Engineering"
+                  description="Fire prevention Systems"
                   color="amber"
                 />
               </div>
@@ -133,10 +158,10 @@ export default function Hero() {
           {/* Mobile Service Cards Grid */}
           <div className="grid grid-cols-2 gap-4 md:hidden">
             <ServiceCard 
-              title="AI" 
-              icon={<Cpu className="w-5 h-5" />}
-              description="Smart Automation"
-              color="indigo"
+              title="BIM" 
+              icon={<Building2 className="w-5 h-5" />}
+              description="3D MEP Modeling"
+              color="purple"
             />
             <ServiceCard 
               title="Electrical" 
@@ -150,24 +175,24 @@ export default function Hero() {
               description="Advanced HVAC Systems"
               color="red"
             />
-            <ServiceCard 
-              title="BIM" 
+            <ServiceCard
+              title="BOQ & Estimation"
               icon={<Building2 className="w-5 h-5" />}
-              description="3D MEP Modeling"
+              description="Cost & material breakdown"
               color="purple"
             />
-            <ServiceCard 
-              title="Plumbing" 
+            <ServiceCard
+              title="Plumbing"
               icon={<Droplets className="w-5 h-5" />}
               description="Efficient Water Solutions"
               color="emerald"
             />
             <ServiceCard 
-              title="Design" 
+              title="Fire Protection" 
               icon={<Ruler className="w-5 h-5" />}
-              description="Precision Engineering"
+              description="Fire prevention Systems"
               color="amber"
-            />
+              />
           </div>
         </div>
       </div>

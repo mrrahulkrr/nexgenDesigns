@@ -1,23 +1,33 @@
 // components/CTA/CTA.jsx
+"use client"
+
+import React, {useRef} from 'react'
+// import emailjs from "@emailjs/browser"
 import { Mail, Phone, ArrowRight } from 'lucide-react'
 import { Button } from '../../components/ui/Button'
 
 export default function CTA() {
+
+  // const sendEmail = (e) => {
+  //   e.preventDefault()
+  //   emailjs
+  //   .sendForm('')
+  // }
   return (
     <section id='cta' className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-gray-800 opacity-95" />
-      
+
       <div className="container-custom relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Contact Info */}
           <div className="text-white space-y-8">
             <h2 className="text-4xl font-bold">
-              Ready to Transform Your MEP Projects?
+              Ready to Transform Your Queries or Projects?
             </h2>
             <p className="text-gray-300 text-lg">
-              Get in touch with our experts for fast, coordinated, and accurate MEP solutions powered by AI technology.
+              Get in touch with our experts for fast, coordinated, and accurate solutions.
             </p>
-            
+
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-yellow-400" />
@@ -25,17 +35,17 @@ export default function CTA() {
                   href="tel:+919799858301" 
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  +91-9799858301
+                  +91-9341075741
                 </a>
               </div>
-              
+
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-yellow-400" />
                 <a 
                   href="mailto:contact@pillarplus.com"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  contact@pillarplus.com
+                  Contact@nexgendesign.in
                 </a>
               </div>
             </div>
@@ -102,14 +112,14 @@ export default function CTA() {
               </Button>
 
               <p className="text-xs text-center text-gray-500">
-                We'll get back to you within 24 hours
+                We'll get back to you soon.
               </p>
             </form>
           </div>
         </div>
 
         {/* Bottom Section - Additional Info */}
-        <div className="mt-16 grid md:grid-cols-3 gap-8 text-white">
+        {/* <div className="mt-16 grid md:grid-cols-3 gap-8 text-white">
           <div className="text-center p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm">
             <h3 className="font-bold text-xl mb-2">Quick Response</h3>
             <p className="text-gray-300">24-hour response time for all inquiries</p>
@@ -124,7 +134,7 @@ export default function CTA() {
             <h3 className="font-bold text-xl mb-2">Global Service</h3>
             <p className="text-gray-300">Supporting projects worldwide</p>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Decorative Elements */}

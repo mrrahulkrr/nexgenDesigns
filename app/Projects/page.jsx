@@ -10,7 +10,7 @@ const projects = [
     location: 'Palamu',
     image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1729875270/NPU_hvn9kr.jpg',
     year: '2023',
-    category: 'Educational'
+    category: 'University'
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const projects = [
     location: 'Bangalore',
     image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1729875248/welkin_park_wfwdvg.jpg',
     year: '2023',
-    category: 'Commercial'
+    category: 'Residential'
   },
   {
     id: 3,
@@ -50,7 +50,7 @@ const projects = [
     location: 'Ranchi',
     image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1730005635/SADAR_HOSPITAL_RANCHI_d9nxzu.jpg',
     year: '2022',
-    category: 'HealthCare'
+    category: 'Hospital'
   },
   {
     id: 7,
@@ -58,7 +58,7 @@ const projects = [
     location: 'Bihar',
     image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1730005649/BIHAR_SARIF_lvhisu.jpg',
     year: '2022',
-    category: 'Commercial'
+    category: 'Hotel'
   },
   {
     id: 8,
@@ -66,7 +66,7 @@ const projects = [
     location: 'Bangalore',
     image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1730005688/VACATATION_VILLA_qnunhw.jpg',
     year: '2022',
-    category: 'Commercial'
+    category: 'Residential'
   },
   {
     id: 9,
@@ -74,7 +74,7 @@ const projects = [
     location: 'Jharkhand',
     image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1730005638/IARI_CAMPS_OF_GORIA_KAMRA_bf9fdl.jpg',
     year: '2022',
-    category: 'Commercial'
+    category: 'Institutional'
   }
 ];
 
@@ -112,12 +112,13 @@ export default function Projects() {
             <span className="text-primary font-semibold">Featured Projects</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our Latest
-            <span className="text-primary"> Work</span>
+             {/* MEPF */}
+              Our
+            <span className="text-primary"> Portfolio</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Explore our portfolio of successful MEP projects delivered across India, 
-            showcasing our expertise in creating efficient and sustainable building systems.
+            Explore our portfolio featuring real-time cutting-edge MEPF designs that embody efficiency and
+            innovation, reflecting our commitment to excellence and client satisfaction.
           </p>
         </div>
 
@@ -133,10 +134,10 @@ export default function Projects() {
                     alt={projects[currentIndex].name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  
+
                   {/* Overlay Gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
-                  
+
                   {/* Project Info */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                     <div className="flex flex-col gap-3">
@@ -154,10 +155,10 @@ export default function Projects() {
                           <MapPin className="w-4 h-4" />
                           <span>{projects[currentIndex].location}</span>
                         </div>
-                        <div className="flex items-center gap-2">
+                        {/* <div className="flex items-center gap-2">
                           <Calendar className="w-4 h-4" />
                           <span>{projects[currentIndex].year}</span>
-                        </div>
+                        </div> */}
                       </div>
 
                       {/* <button className="inline-flex items-center gap-2 text-white hover:text-primary hover:gap-3 transition-all duration-300 mt-2 group">

@@ -35,22 +35,21 @@ export default function Header() {
 
   const navItems = [
     { label: 'HOME', id: 'hero', href: '/' },
-    { label: 'SOLUTIONS', id: 'solutions', href: '/#solutions' },
-    { label: 'ABOUT', id: 'about', href: '/#about' },
+    { label: 'SERVICES', id: 'services', href: '/#services' },
     { label: 'PROJECTS', id: 'projects', href: '/#projects' },
-    { label: 'MEP SERVICES', id: 'services', href: '/#services' },
-    { label: 'RESOURCES', id: 'resources', href: '/#resources' },
+    { label: 'MEP SOLUTIONS', id: 'solutions', href: '/#solutions' },
+    { label: 'ABOUT', id: 'about', href: '/#about' },
   ]
 
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white shadow-md' : 'bg-transparent'
+      scrolled ? 'bg-white shadow-md' : 'bg-white border-b-0 shadow-md'
     }`}>
       <div className="container-custom">
         <div className="flex items-center justify-between py-4">
-          <Link href="/" passHref>
+          <div className="cursor-pointer" onClick={() => scrollToSection('hero')}>
             <Logo />
-          </Link>
+          </div>
 
           <nav className="hidden lg:flex items-center space-x-8 my-5">
             {navItems.map((item) => (
@@ -68,10 +67,11 @@ export default function Header() {
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center space-x-4">
-            <Button variant="outline" size="sm">
+          <div className="hidden lg:flex items-center space-x-4" 
+              onClick={() => scrollToSection('cta')}>
+            {/* <Button variant="outline" size="sm">
               Contact Us
-            </Button>
+            </Button> */}
             <Button>
               REQUEST PROPOSAL
             </Button>
@@ -104,10 +104,10 @@ export default function Header() {
                   {item.label}
                 </Link>
               ))}
-              <div className="flex flex-col space-y-2 pt-4">
-                <Button variant="outline" fullWidth onClick={() => scrollToSection('contact')}>
+              <div className="flex flex-col space-y-2 pt-4" onClick={() => scrollToSection('cta')}>
+                {/* <Button variant="outline" fullWidth onClick={() => scrollToSection('contact')}>
                   Contact Us
-                </Button>
+                </Button> */}
                 <Button fullWidth>
                   REQUEST PROPOSAL
                 </Button>

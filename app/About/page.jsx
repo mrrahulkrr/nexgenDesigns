@@ -18,10 +18,13 @@ export default function About() {
             </h2>
             
             <p className="text-gray-700 leading-relaxed">
-              With over 15 years of experience, PillarPlus has been at the forefront of MEP engineering, 
-              delivering innovative solutions for complex projects. Our team of expert engineers and 
-              consultants work tirelessly to ensure every project meets the highest standards of quality 
-              and efficiency.
+              NexGen Design specializes in MEPF (Mechanical, Electrical, Plumbing,
+              and Fire) engineering, delivering efficient solutions with advanced
+              software. We offer services like Bill of Quantities (BOQ), design
+              calculations, and 3D modeling, tailored to your project needs.
+              Committed to timely delivery and 100% satisfaction, we elevate your
+              projects with innovative engineering solutions. Partner with us for
+              excellence in designs.
             </p>
             
             <div className="grid grid-cols-2 gap-6 pt-4">
@@ -29,7 +32,7 @@ export default function About() {
                 <div className="flex items-center gap-4">
                   <Building2 className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" />
                   <div>
-                    <h3 className="text-4xl font-bold text-primary">500+</h3>
+                    <h3 className="text-4xl font-bold text-primary">50+</h3>
                     <p className="text-gray-600">Projects Completed</p>
                   </div>
                 </div>
@@ -45,7 +48,7 @@ export default function About() {
                 </div>
               </div>
               
-              <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group">
+              {/* <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group">
                 <div className="flex items-center gap-4">
                   <Users2 className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" />
                   <div>
@@ -53,13 +56,13 @@ export default function About() {
                     <p className="text-gray-600">Expert Engineers</p>
                   </div>
                 </div>
-              </div>
+              </div> */}
               
               <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group">
                 <div className="flex items-center gap-4">
                   <Clock className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" />
                   <div>
-                    <h3 className="text-4xl font-bold text-primary">15+</h3>
+                    <h3 className="text-4xl font-bold text-primary">5+</h3>
                     <p className="text-gray-600">Years Experience</p>
                   </div>
                 </div>
@@ -112,8 +115,8 @@ export default function About() {
             
             {/* Floating info card */}
             <div className="absolute -bottom-6 -left-6 bg-primary text-white p-6 rounded-xl shadow-xl transform group-hover:-translate-y-2 transition-transform duration-300">
-              <p className="text-2xl font-bold">Innovation First</p>
-              <p className="text-sm mt-2">AI-Powered MEP Solutions</p>
+              <p className="text-2xl font-bold">+Innovation First</p>
+              <p className="text-sm mt-2">Advanced MEPF Solutions</p>
             </div>
           </div>
         </div>

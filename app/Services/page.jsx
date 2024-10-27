@@ -1,134 +1,133 @@
+"use client"
 
-// components/Services/ServicesList.jsx
-import { Flame, Droplets, Wind, Zap, Shield } from 'lucide-react';
+// components/Services/Services.jsx
+import { useState } from 'react';
+import { ShieldCheck, Droplets, Wind, ZapIcon, Lock, FolderCheck } from 'lucide-react';
 
-export default function ServicesList() {
-  const services = [
-    {
-      id: 1,
-      title: "Fire Alarm Engineering",
-      description: "State-of-the-art fire alarm systems designed to provide comprehensive coverage and rapid response. Our systems include advanced detection mechanisms, intelligent control panels, and seamless integration with building management systems.",
-      icon: Flame,
-      features: [
-        "24/7 Monitoring Systems",
-        "Intelligent Detection",
-        "Emergency Response Integration",
-        "Regular Maintenance Support"
-      ],
-      color: "rgb(239, 68, 68)"
-    },
-    {
-      id: 2,
-      title: "Fire Sprinkler Engineering",
-      description: "Comprehensive sprinkler system design and implementation using cutting-edge software and industry best practices. Our solutions ensure optimal coverage and compliance with safety regulations.",
-      icon: Shield,
-      features: [
-        "Automated Design Systems",
-        "Pressure Calculations",
-        "Coverage Analysis",
-        "Cost Optimization"
-      ],
-      color: "rgb(34, 197, 94)"
-    },
-    {
-      id: 3,
-      title: "HVAC Solutions",
-      description: "Advanced heating, ventilation, and air conditioning systems designed for maximum efficiency and comfort. We specialize in creating sustainable solutions that reduce energy consumption.",
-      icon: Wind,
-      features: [
-        "Energy Efficiency",
-        "Smart Temperature Control",
-        "Air Quality Management",
-        "Sustainable Design"
-      ],
-      color: "rgb(59, 130, 246)"
-    },
-    {
-      id: 4,
-      title: "Electrical Systems",
-      description: "Complete electrical system design and implementation for commercial and residential projects. Our solutions focus on safety, efficiency, and future-proof installations.",
-      icon: Zap,
-      features: [
-        "Power Distribution",
-        "Lighting Design",
-        "Emergency Systems",
-        "Smart Integration"
-      ],
-      color: "rgb(234, 179, 8)"
-    },
-    {
-      id: 5,
-      title: "Plumbing Engineering",
-      description: "Innovative plumbing solutions that maximize efficiency and minimize maintenance needs. Our designs incorporate the latest technologies for water conservation and system longevity.",
-      icon: Droplets,
-      features: [
-        "Water Conservation",
-        "Efficient Distribution",
-        "Sustainable Materials",
-        "Smart Monitoring"
-      ],
-      color: "rgb(14, 165, 233)"
-    }
-  ];
+const servicesData = [
+  {
+    id: 'plumbing',
+    title: 'Plumbing',
+    icon: <Droplets className="w-5 h-5" />,
+    features: [
+      'Drainage piping (internal and external)',
+      'Water supply (internal and external)',
+      'Vertical stake piping',
+      'Plumbing wall elevations',
+      'Schematics',
+      'Bill of quantities',
+      'Product Data Sheet'
+    ],
+    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1730005739/PLUMBING_yiwpm5.jpg'
+  },
+  {
+    id: 'fire-fighting',
+    title: 'Fire-Services',
+    icon: <ShieldCheck className="w-5 h-5" />,
+    features: [
+      'Fire sprinklers layouts',
+      'Fire hydrant layouts',
+      'Fire alarms',
+      'Bill of quantities',
+      "Schematics",
+      'Product Data Sheet'
+    ],
+    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1730005836/FIRE_SERVICES_vjch3k.jpg'
+  },
+  {
+    id: 'roadDesign',
+    title: 'Road Design',
+    icon: <Wind className="w-5 h-5" />,
+    features: [
+      'Alignment Studies',
+      'Cross-Section Layouts',
+      'Ducting layouts',
+      'Drainage Design',
+      'Pavement Design',
+      'Bill of quantities',
+    ],
+    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1730005651/hvac_drwyua.jpg'
+  },
+  {
+    id: 'electrical',
+    title: 'Electrical',
+    icon: <ZapIcon className="w-5 h-5" />,
+    features: ['Power layouts', 'Lighting layouts', 'Emergency systems', 'Bill of quantities'],
+    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1730005722/electrical_ee1rut.jpg'
+  },
+  {
+    id: 'cadToBim',
+    title: 'CAD To BIM',
+    icon: <Lock className="w-5 h-5" />,
+    features: ['Model Conversion', 'Data Integration', 'Clash Detection', '3D Visualization'],
+    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1729875246/TROPICA_vfn8e9.jpg'
+  },
+  // {
+  //   id: 'noc',
+  //   title: "NOC's/Site Supervision",
+  //   icon: <FolderCheck className="w-5 h-5" />,
+  //   features: ['Site inspections', 'Quality control', 'Documentation', 'Compliance checks'],
+  //   image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1729875179/MOR_wume78.jpg'
+  // }
+];
+
+export default function Services() {
+  const [activeTab, setActiveTab] = useState('plumbing');
+  const activeService = servicesData.find(service => service.id === activeTab);
 
   return (
-    <section id='services' className="py-16 lg:py-24">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-4">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-            <span className="text-primary font-semibold">Our Services</span>
-          </div>
-          <h2 className="text-4xl font-bold text-gray-900">
-            Comprehensive <span className="text-primary">MEP Solutions & Services</span>
-          </h2>
-          <p className="text-gray-700 mt-4 max-w-2xl mx-auto">
-            Cutting-edge technology combined with engineering expertise
-          </p>
-        </div>
+    <section id='services' className="py-16 lg:py-24 relative overflow-hidden bg-gray-50">
 
-        <div className="space-y-24">
-          {services.map((service, index) => (
-            <div 
-              key={service.id}
-              className={`grid lg:grid-cols-2 gap-12 items-center ${
-                index % 2 === 0 ? '' : 'lg:flex-row-reverse'
-              }`}
-            >
-              <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                <div className="relative group overflow-hidden rounded-2xl shadow-lg">
-                  <img
-                    src={`/api/placeholder/600/400`}
-                    alt={service.title}
-                    className="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-              </div>
-              
-              <div className={`space-y-6 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                <h3 className="text-3xl font-bold text-gray-900 group-hover:text-primary transition-colors duration-300">
-                  {service.title}
-                </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  {service.description}
-                </p>
-                <ul className="grid grid-cols-1 gap-4">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-3 group/item">
-                      <div className="w-2 h-2 rounded-full bg-primary group-hover/item:scale-150 transition-transform duration-300"></div>
-                      <span className="text-gray-700 group-hover/item:text-primary transition-colors duration-300">
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <button className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-lg">
-                  Learn More
-                </button>
-              </div>
+      <div className="container-custom">
+        <div className="grid lg:grid-cols-12 gap-8">
+          {/* Left sidebar with tabs */}
+          <div className="lg:col-span-3 space-y-2">
+            {servicesData.map((service) => (
+              <button
+                key={service.id}
+                onClick={() => setActiveTab(service.id)}
+                className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
+                  activeTab === service.id
+                    ? 'bg-primary text-white shadow-lg'
+                    : 'bg-white hover:bg-gray-50 text-gray-700'
+                }`}
+              >
+                {service.icon}
+                <span className="font-medium">{service.title}</span>
+              </button>
+            ))}
+          </div>
+
+          {/* Center image */}
+          <div className="lg:col-span-6 ">
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+              <img
+                src={activeService.image}
+                alt={`${activeService.title} diagram`}
+                className="w-full h-full object-cover transform scale-125"
+              />
             </div>
-          ))}
+          </div>
+
+          {/* Right side features */}
+          <div className="lg:col-span-3">
+            <div className="bg-white rounded-lg p-6 shadow-lg">
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">
+                {activeService.title}
+              </h3>
+              <ul className="space-y-2">
+                {activeService.features.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2"></div>
+                    <span className="text-gray-700">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <button className="mt-6 w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors">
+                Read More
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
