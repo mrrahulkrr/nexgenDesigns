@@ -18,11 +18,11 @@ const servicesData = [
       'Bill of quantities',
       'Product recommendations'
     ],
-    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1729875270/NPU_hvn9kr.jpg'
+    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1730005739/PLUMBING_yiwpm5.jpg'
   },
   {
     id: 'fire-fighting',
-    title: 'Fire-Fighting',
+    title: 'Fire-Services',
     icon: <ShieldCheck className="w-5 h-5" />,
     features: [
       'Fire sprinklers layouts',
@@ -31,7 +31,7 @@ const servicesData = [
       'Bill of quantities',
       'Product recommendations'
     ],
-    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1729875248/welkin_park_wfwdvg.jpg'
+    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1730005836/FIRE_SERVICES_vjch3k.jpg'
   },
   {
     id: 'hvac',
@@ -48,14 +48,14 @@ const servicesData = [
       'Bill of quantities',
       'Product recommendations'
     ],
-    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1729875246/TROPICA_vfn8e9.jpg'
+    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1730005651/hvac_drwyua.jpg'
   },
   {
     id: 'electrical',
     title: 'Electrical',
     icon: <ZapIcon className="w-5 h-5" />,
     features: ['Power layouts', 'Lighting layouts', 'Emergency systems', 'Bill of quantities'],
-    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1729875179/MOR_wume78.jpg'
+    image: 'https://res.cloudinary.com/dic3orh1e/image/upload/v1730005722/electrical_ee1rut.jpg'
   },
   {
     id: 'safety',
@@ -78,7 +78,7 @@ export default function Solutions() {
   const activeService = servicesData.find(service => service.id === activeTab);
 
   return (
-    <section className="py-16 lg:py-24 relative overflow-hidden bg-gray-50">
+    <section id='solutions' className="py-16 lg:py-24 relative overflow-hidden bg-gray-50">
       <div className="container-custom">
         <div className="grid lg:grid-cols-12 gap-8">
           {/* Left sidebar with tabs */}
@@ -100,12 +100,12 @@ export default function Solutions() {
           </div>
 
           {/* Center image */}
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-6 ">
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
               <img
                 src={activeService.image}
                 alt={`${activeService.title} diagram`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transform scale-125"
               />
             </div>
           </div>

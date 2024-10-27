@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../ui/Button';
+import { Button } from '../../components/ui/Button';
 import { Play, Zap, Droplets, Wind, Building2, Ruler, Cpu } from 'lucide-react';
 
 export default function Hero() {

@@ -1,11 +1,10 @@
-// components/Header/Header.jsx
 'use client'
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
-import { Button } from '../ui/Button'
-import { Logo } from '../ui/Logo'
+import { Button } from '../../components/ui/Button'
+import { Logo } from '../../components/ui/Logo'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -19,13 +18,28 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const headerOffset = 80
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.scrollY - headerOffset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+      setIsMenuOpen(false)
+    }
+  }
+
   const navItems = [
-    { label: 'HOME', href: '/' },
-    { label: 'ABOUT', href: '/about' },
-    { label: 'AI TECH', href: '/ai-tech' },
-    { label: 'MEP SERVICES', href: '../services/services.jsx' },
-    { label: 'PROJECTS', href: '/projects' },
-    { label: 'RESOURCES', href: '/resources' },
+    { label: 'HOME', id: 'hero', href: '/' },
+    { label: 'SOLUTIONS', id: 'solutions', href: '/#solutions' },
+    { label: 'ABOUT', id: 'about', href: '/#about' },
+    { label: 'PROJECTS', id: 'projects', href: '/#projects' },
+    { label: 'MEP SERVICES', id: 'services', href: '/#services' },
+    { label: 'RESOURCES', id: 'resources', href: '/#resources' },
   ]
 
   return (
@@ -34,14 +48,20 @@ export default function Header() {
     }`}>
       <div className="container-custom">
         <div className="flex items-center justify-between py-4">
-          <Logo />
+          <Link href="/" passHref>
+            <Logo />
+          </Link>
 
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-8 my-5">
             {navItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className="nav-link"
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollToSection(item.id)
+                }}
+                className="nav-link cursor-pointer"
               >
                 {item.label}
               </Link>
@@ -69,20 +89,23 @@ export default function Header() {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="lg:hidden">
-          <nav className="container-custom py-4">
+          <nav className="container-custom py-4 bg-white shadow-lg">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="nav-link"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    scrollToSection(item.id)
+                  }}
+                  className="nav-link text-left"
                 >
                   {item.label}
                 </Link>
               ))}
               <div className="flex flex-col space-y-2 pt-4">
-                <Button variant="outline" fullWidth>
+                <Button variant="outline" fullWidth onClick={() => scrollToSection('contact')}>
                   Contact Us
                 </Button>
                 <Button fullWidth>

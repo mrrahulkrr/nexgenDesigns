@@ -1,10 +1,10 @@
 // components/CTA/CTA.jsx
 import { Mail, Phone, ArrowRight } from 'lucide-react'
-import { Button } from '../ui/Button'
+import { Button } from '../../components/ui/Button'
 
 export default function CTA() {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section id='cta' className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-gray-800 opacity-95" />
       
       <div className="container-custom relative z-10">
