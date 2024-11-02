@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    output: 'export',
     reactStrictMode: true,
     images: {
-      domains: ['localhost'],
+      // domains: ['localhost'],
+      loader: 'custom',
+      loaderFile: './my-loader.ts',
     },
     webpack(config) {
       return config;

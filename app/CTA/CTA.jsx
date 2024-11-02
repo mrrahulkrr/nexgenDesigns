@@ -1,18 +1,61 @@
 // components/CTA/CTA.jsx
 "use client"
 
-import React, {useRef} from 'react'
-// import emailjs from "@emailjs/browser"
+import React, {useRef, useState} from 'react'
+import emailjs, { send } from "@emailjs/browser"
 import { Mail, Phone, ArrowRight } from 'lucide-react'
 import { Button } from '../../components/ui/Button'
 
 export default function CTA() {
+  const formRef = useRef();
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  })
 
-  // const sendEmail = (e) => {
-  //   e.preventDefault()
-  //   emailjs
-  //   .sendForm('')
-  // }
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    const {target} = e;
+    const {name, value} = target;
+
+    setForm({
+      ...form,
+      [name] : value,
+    })
+  }
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setLoading(true);
+  
+    emailjs
+      .sendForm(
+        'service_1yev60q',
+        'template_tllu74a',
+        formRef.current, // Using the form reference here
+        'tyMD4PB20QGGS3MtS'
+      )
+      .then(
+        () => {
+          setLoading(false);
+          setForm({
+            name: "",
+            email: "",
+            message: "",
+          });
+          console.log('Email sent successfully');
+        },
+        (err) => {
+          setLoading(false);
+          console.error('Failed to send email', err);
+        }
+      );
+  };
+  
+
+
   return (
     <section id='cta' className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-gray-800 opacity-95" />
@@ -53,7 +96,7 @@ export default function CTA() {
 
           {/* Right Column - Contact Form */}
           <div className="bg-white rounded-xl p-8 shadow-2xl">
-            <form className="space-y-6">
+            <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
               <div className="space-y-4">
                 <div>
                   <label 
@@ -65,7 +108,9 @@ export default function CTA() {
                   <input
                     type="text"
                     id="name"
-                    name="name"
+                    // value={form.name}
+                    onChange={handleChange}
+                    name="from_name"
                     className="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all"
                     placeholder="John Doe"
                   />
@@ -81,7 +126,9 @@ export default function CTA() {
                   <input
                     type="email"
                     id="email"
-                    name="email"
+                    // value={form.email}
+                    onChange={handleChange}
+                    name="from_email"
                     className="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all"
                     placeholder="john@example.com"
                   />
@@ -89,14 +136,16 @@ export default function CTA() {
 
                 <div>
                   <label 
-                    htmlFor="project" 
+                    htmlFor="message" 
                     className="block text-sm font-medium text-gray-700"
                   >
                     Project Details
                   </label>
                   <textarea
-                    id="project"
-                    name="project"
+                    id="message"
+                    name="message"
+                    // value={form.message}
+                    onChange={handleChange}
                     rows={4}
                     className="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all resize-none"
                     placeholder="Tell us about your project requirements..."
@@ -105,9 +154,10 @@ export default function CTA() {
               </div>
 
               <Button
+                type='submit'
                 className="w-full group"
               >
-                Request Proposal
+                {loading ? "Sending..." : "Request Proposal"}
                 <ArrowRight className="ml-2 w-4 h-4 inline-block transition-transform group-hover:translate-x-1" />
               </Button>
 
